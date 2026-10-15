@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feeling Felino | Daniela Tartarini – Consulente della Relazione Felina® SIUA</title>
+    <meta name="description" content="Consulenze sulla relazione felina con approccio cognitivo-zooantropologico SIUA. Costruiamo insieme una convivenza serena e consapevole con il tuo gatto.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Cormorant Garamond (Editorial Serif) & Plus Jakarta Sans (Clean Modern Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            primary: 'var(--color-primary)',
+                            primaryDark: 'var(--color-primary-dark)',
+                            secondary: 'var(--color-secondary)',
+                            bg: 'var(--color-bg)',
+                            surface: 'var(--color-surface)',
+                            text: 'var(--color-text)',
+                            muted: 'var(--color-muted)',
+                            accent: 'var(--color-accent)',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Dynamic CSS Variables for Palette Customizer */
+        :root {
+            --color-primary: #C87D65;
+            --color-primary-dark: #B0644C;
+            --color-secondary: #7A9A8B;
+            --color-bg: #FAF6F0;
+            --color-surface: #F2EAE0;
+            --color-text: #2C221E;
+            --color-muted: #6E5D55;
+            --color-accent: #D9A05B;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        h1, h2, h3, .font-editorial {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--color-bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-primary);
+            border-radius: 9999px;
+        }
+
+        /* Organic Morphing Blob Animation */
+        @keyframes morph {
+            0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        }
+        .organic-blob {
+            animation: morph 10s ease-in-out infinite;
+        }
+
+        /* Floating Micro-Animation */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+        .animate-float {
+            animation: floatSlow 6s ease-in-out infinite;
+        }
+        .animate-float-delayed {
+            animation: floatSlow 7s ease-in-out 2s infinite;
+        }
+
+        /* Scroll Reveal Transitions */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Glassmorphism */
+        .glass-header {
+            background: rgba(250, 246, 240, 0.86);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(200, 125, 101, 0.14);
+        }
+
+        /* Custom Cursor Follower */
+        #cursor-ring {
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 34px;
+            height: 34px;
+            border: 1.5px solid var(--color-primary);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.25s ease, height 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+            z-index: 9999;
+            display: none;
+        }
+        @media (pointer: fine) {
+            #cursor-ring { display: block; }
+        }
+
+        /* Subtle Grain Texture Overlay */
+        .bg-grain {
+            background-image: radial-gradient(rgba(200, 125, 101, 0.08) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+
+        /* Card Hover Lift */
+        .card-hover {
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -15px rgba(44, 34, 30, 0.09);
+        }
+    </style>
+</head>
+<body class="bg-grain antialiased selection:bg-brand-primary selection:text-white">
+
+    <!-- Reading Progress Bar -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-brand-primary z-[60] transition-all duration-100" style="width: 0%;"></div>
+
+    <!-- Custom Cursor Ring -->
+    <div id="cursor-ring"></div>
+
+    <!-- Top Announcement Banner -->
+    <div class="bg-brand-primary text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium tracking-wide">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-2">
+            <span class="inline-flex items-center gap-1.5 bg-white/20 px-2.5 py-0.5 rounded-full text-xs font-semibold">
+                <i class="ph-fill ph-sparkle"></i> Risorsa Gratuita
+            </span>
+            <span>Vuoi ricevere la mia guida PDF <strong>"I 5 pilastri del benessere felino"</strong>?</span>
+            <a href="#guida-gratuita" class="underline decoration-white/70 hover:decoration-white font-semibold ml-1 inline-flex items-center gap-1">
+                Scaricala subito <i class="ph-bold ph-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Sticky Header matching iconic centered split-navigation of FeelingFelino.it -->
+    <header id="main-header" class="sticky top-0 z-50 glass-header transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 lg:h-24">
+                
+                <!-- Left Navigation (Desktop) -->
+                <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                    <a href="#home" class="hover:text-brand-primary transition-colors py-2 relative group">
+                        Home
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#chi-sono" class="hover:text-brand-primary transition-colors py-2 relative group">
+                        Chi sono
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#percorsi" class="hover:text-brand-primary transition-colors py-2 relative group">
+                        Percorsi
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#calcolatore" class="hover:text-brand-primary transition-colors py-2 relative group flex items-center gap-1">
+                        <i class="ph-duotone ph-paw-print text-brand-primary"></i> Spazi N+1
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </nav>
+
+                <!-- Centered Brand Logo -->
+                <a href="#home" class="flex items-center gap-3 group focus:outline-none">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-brand-surface border border-brand-primary/30 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+                        <!-- Custom Line-Art Cat & Heart SVG Emblem -->
+                        <svg class="w-8 h-8 text-brand-primary" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 26L12 10L26 18C28 17.5 30 17.5 32 17.5C34 17.5 36 17.5 38 18L52 10L48 26C52 31 53 38 49 45C45 52 38 55 32 55C26 55 19 52 15 45C11 38 12 31 16 26Z" fill="rgba(200,125,101,0.1)"/>
+                            <path d="M24 34C25.5 32 28.5 32 30 34"/>
+                            <path d="M34 34C35.5 32 38.5 32 40 34"/>
+                            <path d="M32 39L30 42H34L32 39Z" fill="currentColor"/>
+                            <path d="M32 42C32 45 29 47 26 46"/>
+                            <path d="M32 42C32 45 35 47 38 46"/>
+                        </svg>
+                    </div>
+                    <div class="text-left">
+                        <span class="block font-editorial text-2xl sm:text-3xl font-bold tracking-tight text-brand-text leading-none">
+                            Feeling Felino
+                        </span>
+                        <span class="block text-[10px] sm:text-xs uppercase tracking-[0.18em] text-brand-muted mt-1">
+                            Daniela Tartarini • SIUA
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Right Navigation (Desktop) -->
+                <div class="hidden lg:flex items-center space-x-7 text-sm font-medium tracking-wide">
+                    <a href="#gift-card" class="hover:text-brand-primary transition-colors py-2 relative group">
+                        Gift Card
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#blog" class="hover:text-brand-primary transition-colors py-2 relative group">
+                        Blog
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#contatti" class="hover:text-brand-primary transition-colors py-2 relative group">
+                        Contatti
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <button onclick="openQuizModal()" class="bg-brand-primary hover:bg-brand-primaryDark text-white px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider shadow-sm hover:shadow-md transition-all flex items-center gap-2">
+                        <i class="ph-bold ph-magic-wand"></i> Test Percorso
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center gap-2 lg:hidden">
+                    <button onclick="openQuizModal()" class="bg-brand-primary text-white px-3.5 py-2 rounded-full text-xs font-semibold">
+                        Quiz
+                    </button>
+                    <button id="mobile-menu-btn" aria-label="Apri menu" class="p-2.5 rounded-xl bg-brand-surface text-brand-text hover:text-brand-primary focus:outline-none">
+                        <i id="mobile-menu-icon" class="ph-bold ph-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-brand-bg border-b border-brand-primary/20 px-6 pt-3 pb-6 space-y-3 shadow-xl">
+            <div class="grid grid-cols-2 gap-2 pt-2">
+                <a href="#home" class="mobile-link px-4 py-3 rounded-xl bg-brand-surface/70 font-medium text-sm flex items-center gap-2"><i class="ph ph-house text-brand-primary"></i> Home</a>
+                <a href="#chi-sono" class="mobile-link px-4 py-3 rounded-xl bg-brand-surface/70 font-medium text-sm flex items-center gap-2"><i class="ph ph-user-circle text-brand-primary"></i> Chi sono</a>
+                <a href="#percorsi" class="mobile-link px-4 py-3 rounded-xl bg-brand-surface/70 font-medium text-sm flex items-center gap-2"><i class="ph ph-chats-circle text-brand-primary"></i> Percorsi</a>
+                <a href="#calcolatore" class="mobile-link px-4 py-3 rounded-xl bg-brand-surface/70 font-medium text-sm flex items-center gap-2"><i class="ph ph-calculator text-brand-primary"></i> Calcolatore N+1</a>
+                <a href="#gift-card" class="mobile-link px-4 py-3 rounded-xl bg-brand-surface/70 font-medium text-sm flex items-center gap-2"><i class="ph ph-gift text-brand-primary"></i> Gift Card</a>
+                <a href="#blog" class="mobile-link px-4 py-3 rounded-xl bg-brand-surface/70 font-medium text-sm flex items-center gap-2"><i class="ph ph-article text-brand-primary"></i> Blog</a>
+            </div>
+            <a href="#contatti" class="mobile-link block w-full text-center bg-brand-primary text-white py-3.5 rounded-xl font-semibold text-sm shadow-sm">
+                Contattami Ora
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative pt-10 pb-20 lg:pt-16 lg:pb-28 overflow-hidden">
+        <!-- Decorative Background Organic SVG Blobs -->
+        <div class="absolute -top-24 -left-24 w-96 h-96 bg-brand-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/3 -right-24 w-96 h-96 bg-brand-secondary/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+                
+                <!-- Left Column: Editorial Copy -->
+                <div class="lg:col-span-7 space-y-6 reveal active">
+                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-brand-surface border border-brand-primary/25 text-brand-text text-xs sm:text-sm font-medium shadow-sm">
+                        <span class="w-2.5 h-2.5 rounded-full bg-brand-secondary animate-pulse"></span>
+                        <span>Consulente della Relazione Felina® certificata <strong>SIUA</strong></span>
+                    </div>
+
+                    <h1 class="font-editorial text-4xl sm:text-5xl lg:text-6xl font-semibold text-brand-text leading-[1.12] tracking-tight">
+                        Ciao, sono Daniela.<br>
+                        <span class="italic font-normal text-brand-primary">Costruiamo insieme</span> una convivenza serena e consapevole con il tuo gatto.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-brand-muted leading-relaxed max-w-2xl">
+                        Attraverso un approccio empatico e rispettoso della natura del gatto, accompagno i partner umani nella comprensione del suo linguaggio e dei suoi bisogni, favorendo una relazione basata su <strong>fiducia e armonia</strong>.
+                    </p>
+
+                    <!-- Dual CTAs -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+                        <a href="#percorsi" class="bg-brand-primary hover:bg-brand-primaryDark text-white px-8 py-4 rounded-2xl font-semibold text-sm sm:text-base shadow-lg shadow-brand-primary/20 hover:shadow-xl transition-all flex items-center justify-center gap-2.5 group">
+                            <span>Scopri i Percorsi di Consulenza</span>
+                            <i class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <button onclick="openQuizModal()" class="bg-brand-surface hover:bg-white text-brand-text border border-brand-primary/30 px-7 py-4 rounded-2xl font-semibold text-sm sm:text-base transition-all flex items-center justify-center gap-2.5">
+                            <i class="ph-duotone ph-sparkle text-brand-primary text-xl"></i>
+                            <span>Quale percorso fa per te? (Quiz 30s)</span>
+                        </button>
+                    </div>
+
+                    <!-- Trust Micro-Indicators -->
+                    <div class="pt-4 grid grid-cols-3 gap-4 border-t border-brand-primary/15 max-w-xl">
+                        <div>
+                            <div class="font-editorial text-2xl sm:text-3xl font-bold text-brand-primary">SIUA</div>
+                            <p class="text-xs text-brand-muted">Scuola Interazione Uomo Animale</p>
+                        </div>
+                        <div>
+                            <div class="font-editorial text-2xl sm:text-3xl font-bold text-brand-secondary">100%</div>
+                            <p class="text-xs text-brand-muted">Approccio Cognitivo-Zooantropologico</p>
+                        </div>
+                        <div>
+                            <div class="font-editorial text-2xl sm:text-3xl font-bold text-brand-accent">Online</div>
+                            <p class="text-xs text-brand-muted">Videoconsulenze in tutta Italia</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Visual Collage & Interactive Decoder Card -->
+                <div class="lg:col-span-5 relative reveal active">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Morphing Organic Frame -->
+                        <div class="organic-blob overflow-hidden border-4 border-white shadow-2xl bg-brand-surface aspect-[4/4.6] relative">
+                            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1000&q=85" 
+                                 alt="Gatto sereno che guarda con fiducia" 
+                                 onerror="this.src='https://placehold.co/800x900/F2EAE0/C87D65?text=Feeling+Felino'"
+                                 class="w-full h-full object-cover object-center scale-105 hover:scale-100 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-5 left-5 right-5 text-white">
+                                <span class="text-xs uppercase tracking-widest bg-brand-primary/90 px-3 py-1 rounded-full font-semibold">Etologia & Relazione</span>
+                                <p class="font-editorial italic text-xl mt-2">“Ogni comportamento è una forma di comunicazione.”</p>
+                            </div>
+                        </div>
+
+                        <!-- Floating Badge Top Left -->
+                        <div class="animate-float absolute -top-5 -left-4 sm:-left-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-brand-primary/20 max-w-[210px]">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-brand-secondary/20 text-brand-secondary flex items-center justify-center shrink-0">
+                                    <i class="ph-fill ph-seal-check text-2xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-bold text-brand-text leading-tight">Diploma Certificato</p>
+                                    <p class="text-[11px] text-brand-muted mt-0.5">Consulente della Relazione Felina®</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Interactive "Cosa dice il tuo gatto?" Micro-Widget Bottom Right -->
+                        <div class="animate-float-delayed absolute -bottom-6 -right-2 sm:-right-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-brand-primary/20 w-64 sm:w-72">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-[11px] font-bold uppercase tracking-wider text-brand-primary flex items-center gap-1">
+                                    <i class="ph-fill ph-Translate"></i> Traduttore Etologico
+                                </span>
+                                <button onclick="cycleCatSignal()" class="text-xs font-semibold text-brand-secondary hover:underline flex items-center gap-0.5">
+                                    Cambia <i class="ph-bold ph-arrows-clockwise"></i>
+                                </button>
+                            </div>
+                            <p id="cat-signal-title" class="text-xs font-bold text-brand-text">Coda alta a punto interrogativo ❓</p>
+                            <p id="cat-signal-desc" class="text-[11px] text-brand-muted mt-1 leading-snug">
+                                "Sono felice di vederti! È un invito amichevole all'interazione sociale e alle coccole."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EMPATHY & PROBLEM DIAGNOSTIC SECTION -->
+    <section id="perche-contattarmi" class="py-20 bg-brand-surface/70 border-y border-brand-primary/15 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="max-w-3xl mx-auto text-center space-y-4 reveal">
+                <span class="text-xs uppercase tracking-[0.2em] text-brand-primary font-bold">Oltre i falsi miti</span>
+                <h2 class="font-editorial text-3xl sm:text-5xl font-semibold text-brand-text leading-tight">
+                    Il tuo gatto ha comportamenti che non capisci?
+                </h2>
+                <p class="text-base sm:text-lg text-brand-muted leading-relaxed">
+                    I gatti <strong>non sono “indipendenti”</strong> e <strong>non fanno dispetti</strong>: sono animali con un mondo complesso, fatto di emozioni, bisogni e relazioni. Se il tuo gatto mostra ansia, aggressività, eliminazioni inappropriate o altri problemi comportamentali, <span class="underline decoration-brand-primary/60 font-medium text-brand-text">c’è sempre un motivo</span>.
+                </p>
+                <p class="text-sm sm:text-base text-brand-muted">
+                    Con il mio aiuto potrai comprendere cosa sta cercando di comunicarti e ritrovare l’equilibrio in casa.
+                </p>
+            </div>
+
+            <!-- Interactive 4 Pillars Grid ("Perché contattarmi?") -->
+            <div class="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+                
+                <!-- Card 1 -->
+                <div onclick="selectDiagnosticCard(0)" id="diag-card-0" class="card-hover cursor-pointer bg-brand-bg p-7 rounded-3xl border-2 border-brand-primary shadow-sm flex flex-col justify-between transition-all">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-primary/15 text-brand-primary flex items-center justify-center mb-5">
+                            <i class="ph-duotone ph-warning-circle text-3xl"></i>
+                        </div>
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-brand-primary">Caso 01</span>
+                        <h3 class="font-editorial text-2xl font-bold text-brand-text mt-1 mb-3">
+                            Problemi comportamentali
+                        </h3>
+                        <p class="text-sm text-brand-muted leading-relaxed">
+                            Eliminazioni fuori dalla lettiera, graffiature su divani e porte, miagolii notturni insistenti, iperattività, morsi improvvisi o atteggiamenti di paura e stress.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-brand-primary/15 flex items-center justify-between text-xs font-semibold text-brand-primary">
+                        <span>Vedi consiglio etologico</span>
+                        <i class="ph-bold ph-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div onclick="selectDiagnosticCard(1)" id="diag-card-1" class="card-hover cursor-pointer bg-brand-bg p-7 rounded-3xl border border-brand-primary/20 shadow-sm flex flex-col justify-between transition-all">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-secondary/20 text-brand-secondary flex items-center justify-center mb-5">
+                            <i class="ph-duotone ph-chats-teardrop text-3xl"></i>
+                        </div>
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-brand-secondary">Caso 02</span>
+                        <h3 class="font-editorial text-2xl font-bold text-brand-text mt-1 mb-3">
+                            Capire il linguaggio felino
+                        </h3>
+                        <p class="text-sm text-brand-muted leading-relaxed">
+                            Vuoi decifrare posture, vocalizzi, marcature e segnali del corpo per evitare fraintendimenti, rispettare i suoi tempi e approfondire il vostro legame quotidiano.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-brand-primary/15 flex items-center justify-between text-xs font-semibold text-brand-secondary">
+                        <span>Vedi consiglio etologico</span>
+                        <i class="ph-bold ph-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div onclick="selectDiagnosticCard(2)" id="diag-card-2" class="card-hover cursor-pointer bg-brand-bg p-7 rounded-3xl border border-brand-primary/20 shadow-sm flex flex-col justify-between transition-all">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-accent/20 text-brand-accent flex items-center justify-center mb-5">
+                            <i class="ph-duotone ph-users-three text-3xl"></i>
+                        </div>
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-brand-accent">Caso 03</span>
+                        <h3 class="font-editorial text-2xl font-bold text-brand-text mt-1 mb-3">
+                            Convivenza tra più gatti
+                        </h3>
+                        <p class="text-sm text-brand-muted leading-relaxed">
+                            Gestione di soffi, inseguimenti, tensioni silenziose intorno alle risorse o preparazione per un inserimento graduale e sicuro di un nuovo micio in famiglia.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-brand-primary/15 flex items-center justify-between text-xs font-semibold text-brand-accent">
+                        <span>Vedi consiglio etologico</span>
+                        <i class="ph-bold ph-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div onclick="selectDiagnosticCard(3)" id="diag-card-3" class="card-hover cursor-pointer bg-brand-bg p-7 rounded-3xl border border-brand-primary/20 shadow-sm flex flex-col justify-between transition-all">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-brand-primary/15 text-brand-primary flex items-center justify-center mb-5">
+                            <i class="ph-duotone ph-house-line text-3xl"></i>
+                        </div>
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-brand-primary">Caso 04</span>
+                        <h3 class="font-editorial text-2xl font-bold text-brand-text mt-1 mb-3">
+                            Grandi cambiamenti
+                        </h3>
+                        <p class="text-sm text-brand-muted leading-relaxed">
+                            Prevenire e gestire lo stress legato a un trasloco, ristrutturazioni, cambio di routine lavorativa, l’arrivo di un bebè o di un altro animale domestico.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-brand-primary/15 flex items-center justify-between text-xs font-semibold text-brand-primary">
+                        <span>Vedi consiglio etologico</span>
+                        <i class="ph-bold ph-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic Diagnostic Insight Bar -->
+            <div id="diagnostic-detail-box" class="mt-8 bg-white rounded-3xl p-6 sm:p-8 border border-brand-primary/25 shadow-sm reveal">
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                    <div class="space-y-2 max-w-3xl">
+                        <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-brand-primary">
+                            <i class="ph-fill ph-lightbulb"></i>
+                            <span id="diag-insight-badge">Approccio Daniela • Problemi Comportamentali</span>
+                        </div>
+                        <h4 id="diag-insight-title" class="font-editorial text-2xl sm:text-3xl font-bold text-brand-text">
+                            Pipì fuori dalla lettiera o aggressività? Non è mai un dispetto.
+                        </h4>
+                        <p id="diag-insight-text" class="text-sm sm:text-base text-brand-muted leading-relaxed">
+                            Escludendo prima eventuali cause mediche con il veterinario, analizziamo insieme posizionamento delle risorse, substrato, stress ambientale e dinamiche relazionali. Spesso bastano modifiche mirate e un monitoraggio costante per risolvere il disagio alla radice.
+                        </p>
+                    </div>
+                    <div class="shrink-0 flex flex-col sm:flex-row lg:flex-col gap-3">
+                        <div class="bg-brand-surface px-4 py-2.5 rounded-xl text-center">
+                            <span class="block text-[10px] uppercase tracking-wider text-brand-muted">Percorso Consigliato</span>
+                            <strong id="diag-recommended-pkg" class="text-sm text-brand-primary font-bold">Percorso Intensivo 30 Giorni o 1 Mese</strong>
+                        </div>
+                        <a href="#percorsi" class="bg-brand-primary hover:bg-brand-primaryDark text-white px-6 py-3 rounded-xl text-xs font-semibold uppercase tracking-wider text-center transition-all">
+                            Vai ai Percorsi
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PERCORSI DI CONSULENZA (PRICING & COMPARISON) -->
+    <section id="percorsi" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Header & Interactive Filter/Comparison Bar -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6 reveal">
+                <div class="space-y-3 max-w-2xl">
+                    <span class="text-xs uppercase tracking-[0.2em] text-brand-primary font-bold">Servizi su misura</span>
+                    <h2 class="font-editorial text-4xl sm:text-5xl font-semibold text-brand-text">
+                        Percorsi di Consulenza
+                    </h2>
+                    <p class="text-base text-brand-muted">
+                        Ogni gatto e ogni famiglia hanno una storia unica. Scegli la formula più adatta alle tue esigenze: dalla consulenza conoscitiva singola fino ai percorsi affiancati passo dopo passo.
+                    </p>
+                </div>
+                <div class="flex items-center gap-3 self-start md:self-auto">
+                    <button onclick="toggleComparisonTable()" class="px-5 py-3 rounded-2xl bg-brand-surface hover:bg-brand-primary/15 text-brand-text text-xs sm:text-sm font-semibold border border-brand-primary/25 transition-all flex items-center gap-2">
+                        <i class="ph-bold ph-scales text-brand-primary text-lg"></i>
+                        <span id="compare-btn-text">Confronta tutti i dettagli</span>
+                    </button>
+                    <button onclick="openQuizModal()" class="px-5 py-3 rounded-2xl bg-brand-primary/15 hover:bg-brand-primary hover:text-white text-brand-primary text-xs sm:text-sm font-semibold transition-all flex items-center gap-2">
+                        <i class="ph-bold ph-sparkle text-lg"></i>
+                        <span>Aiutami a scegliere</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 4 Pricing Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-7 items-stretch reveal">
+                
+                <!-- 1. CONSULENZA SINGOLA -->
+                <div class="card-hover bg-white rounded-3xl p-7 border border-brand-primary/20 flex flex-col justify-between relative">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-brand-surface text-brand-muted">
+                                Incontro Unico
+                            </span>
+                            <i class="ph-duotone ph-chat-circle-text text-2xl text-brand-primary"></i>
+                        </div>
+                        <h3 class="font-editorial text-2xl font-bold text-brand-text">Consulenza Singola</h3>
+                        <p class="text-xs text-brand-muted mt-1 min-h-[34px]">
+                            Ideale per dubbi specifici, prevenzione o per organizzare la casa a misura di gatto.
+                        </p>
+                        <div class="my-6 pb-6 border-b border-brand-primary/15 flex items-baseline gap-1">
+                            <span class="font-editorial text-5xl font-bold text-brand-text">60€</span>
+                            <span class="text-xs text-brand-muted">/ una tantum</span>
+                        </div>
+                        <ul class="space-y-3.5 text-sm text-brand-text">
+                            <li class="flex items-start gap-2.5">
+                                <i class="ph-fill ph-check-circle text-brand-secondary text-lg shrink-0 mt-0.5"></i>
+                                <span>Questionario pre-consulenza e invio di foto e video</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="ph-fill ph-check-circle text-brand-secondary text-lg shrink-0 mt-0.5"></i>
+                                <span>Studio preliminare del caso</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="ph-fill ph-check-circle text-brand-secondary text-lg shrink-0 mt-0.5"></i>
+                                <span><strong>60 minuti</strong> di videoconsulenza</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="ph-fill ph-check-circle text-brand-secondary text-lg shrink-0 mt-0.5"></i>
+                                <span>Relazione post consulenza con indicazioni e link ai prodotti consigliati</span>
+                            </li>
+                            <li class="flex items-start gap-2.5 text-brand-muted/60 line-through">
+                                <i class="ph ph-x-circle text-brand-muted/50 text-lg shrink-0 mt-0.5"></i>
+                                <span>Follow-up / monitoraggio successivo</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button onclick="openBookingModal('Consulenza Singola (60€)')" class="mt-8 w-full py-3.5 px-5 rounded-2xl bg-brand-surface hover:bg-brand-primary hover:text-white text-brand-text font-semibold text-sm transition-all flex items-center justify-center gap-2">
+                        <span>Richiedi Informazioni</span>
+                        <i class="ph-bold ph-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- 2. PERCORSO 1 MESE -->
+                <div class="card-hover bg-white rounded-3xl p-7 border border-brand-primary/20 flex flex-col justify-between relative">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-brand-secondary/15 text-brand-secondary">
+                                30 Giorni • Settimanale
+                            </span>
+                            <i class="ph-duotone ph-calendar-check text-2xl text-brand-secondary"></i>
+                        </div>
+                        <h3 class="font-editorial text-2xl font-bold text-brand-text">Percorso 1 Mese</h3>
+                        <p class="text-xs text-brand-muted mt-1 min-h-[34px]">
+                            Accompagnamento costante con aggiornamenti settimanali per consolidare i progressi.
+                        </p>
+                        <div class="my-6 pb-6 border-b border-brand-primary/15 flex items-baseline gap-1">
+                            <span class="font-editorial text-5xl font-bold text-brand-text">119€</span>
+                            <span class="text-xs text-brand-muted">/ 30 giorni</span>
+                        </div>
+                        <ul class="space-y-3.5 text-sm text-brand-text">
+                            <li class="flex items-start gap-2.5">
+                                <i class="ph-fill ph-check-circle text-brand-secondary text-lg shrink-0 mt-0.5"></i>
+                                <span>Questionario e invio di foto e video + studio preliminare del caso</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="ph-fill ph-check-circle text-brand-secondary text-lg shrink-0 mt-0.5"></i>
+                                <span><strong>60 minuti</strong> di videoconsulenza iniziale</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="ph-fill ph-check-circle text-brand-secondary text-lg shrink-0 mt-0.5"></i>
+                                <span><strong>Monitoraggio settimanale</strong> per 30 giorni (3 messaggi di aggiornamento)</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="ph-fill ph-check-circle text-brand-secondary text-lg shrink-0 mt-0.5"></i>
+                                <span><strong>1 videochiamata finale</strong> di 30 minuti</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="ph-fill ph-check-circle text-brand-secondary text-lg shrink-0 mt-0.5"></i>
+                                <span>Relazione post consulenza con indicazioni e link ai prodotti</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button onclick="openBookingModal('Percorso 1 Mese (119€)')" class="mt-8 w-full py-3.5 px-5 rounded-2xl bg-brand-surface hover:bg-brand-primary hover:text-white text-brand-text font-semibold text-sm transition-all flex items-center justify-center gap-2">
+                        <span>Richiedi Informazioni</span>
+                        <i class="ph-bold ph-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- 3. PERCORSO INTENSIVO 30 GIORNI (BEST SELLER) -->
+                <div class="card-hover bg-brand-text text-white rounded-3xl p-7 border-2 border-brand-primary shadow-2xl flex flex-col justify-between relative xl:-translate-y-3">
+                    <!-- Best Seller Pill -->
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-primary text-white text-[11px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full shadow-md flex items-center gap-1.5 whitespace-nowrap">
+                        <i class="ph-fill ph-star"></i> Il Più Venduto
+                    </div>
+
+                    <div>
+                        <div class="flex items-center justify-between mb-4 pt-2">
+                            <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-white/10 text-brand-accent">
+                                Supporto Giornaliero
+                            </span>
+                            <i class="ph-duotone ph-heart-straight text-2xl text-brand-primary"></i>
+                        </div>
+                        <h3 class="font-editorial text-2xl font-bold text-white">Percorso Intensivo 30gg</h3>
+                        <p class="text-xs text-white/75 mt-1 min-h-[34px]">
+                            Massima serenità: ti seguo ogni singolo giorno per affrontare situazioni delicate o inserimenti.
+                        </p>
+                        <div class="my-6 pb-6 border-b border-white/15 flex items-baseline gap-1">
+                            <span class="font-editorial text-5xl font-bold text-brand-accent">169€</span>
+                            <span class="text-xs text-white/70">/ 30 giorni</span>
+                        </div>
+                        <ul class="space-y-3.5 text-sm text-white/90">
+                            <li class="flex items-start gap-2.5">
+                                <i class="ph-fill ph-check-circle text-brand-accent text-lg shrink-0 mt-0.5"></i>
+                                <span>Questionario e invio di foto e video + studio preliminare del caso</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="ph-fill ph-check-circle text-brand-accent text-lg shrink-0 mt-0.5"></i>
+                                <span><strong>60 minuti</strong> di videoconsulenza iniziale</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="ph-fill ph-check-circle text-brand-accent text-lg shrink-0 mt-0.5"></i>
+                                <span><strong class="text-brand-accent">Monitoraggio giornaliero</strong> (1 messaggio al giorno per 30 giorni)</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="ph-fill ph-check-circle text-brand-accent text-lg shrink-0 mt-0.5"></i>
+                                <span><strong>1 videochiamata finale</strong> di 30 minuti</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="ph-fill ph-check-circle text-brand-accent text-lg shrink-0 mt-0.5"></i>
+                                <span>Relazione post consulenza con indicazioni e link ai prodotti</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button onclick="openBookingModal('Percorso Intensivo 30 Giorni (169€)')" class="mt-8 w-full py-4 px-5 rounded-2xl bg-brand-primary hover:bg-brand-primaryDark text-white font-semibold text-sm shadow-lg transition-all flex items-center justify-center gap-2">
+                        <span>Prenota il Percorso Intensivo</span>
+                        <i class="ph-bold ph-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- 4. PERCORSO 2 MESI -->
+                <div class="card-hover bg-white rounded-3xl p-7 border border-brand-primary/20 flex flex-col justify-between relative">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-brand-primary/15 text-brand-primary">
+                                60 Giorni • Completo
+                            </span>
+                            <i class="ph-duotone ph-hourglass-high text-2xl text-brand-primary"></i>
+                        </div>
+                        <h3 class="font-editorial text-2xl font-bold text-brand-text">Percorso 2 Mesi</h3>
+                        <p class="text-xs text-brand-muted mt-1 min-h-[34px]">
+                            Ideale per convivenze complesse tra più gatti o problematiche radicate nel tempo.
+                        </p>
+                        <div class="my-6 pb-6 border-b border-brand-primary/15 flex items-baseline gap-1">
+                            <span class="font-editorial text-5xl font-bold text-brand-text">199€</span>
+                            <span class="text-xs text-brand-muted">/ 60 giorni</span>
+                        </div>
+                        <ul class="space-y-3.5 text-sm text-brand-text">
+                            <li class="flex items-start gap-2.5">
+                                <i class="ph-fill ph-check-circle text-brand-secondary text-lg shrink-0 mt-0.5"></i>
+                                <span>Questionario e invio di foto e video + studio preliminare del caso</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="ph-fill ph-check-circle text-brand-secondary text-lg shrink-0 mt-0.5"></i>
+                                <span><strong>90 minuti</strong> di videoconsulenza iniziale approfondita</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="ph-fill ph-check-circle text-brand-secondary text-lg shrink-0 mt-0.5"></i>
+                                <span><strong>Monitoraggio settimanale</strong> per 60 giorni (7 messaggi)</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="ph-fill ph-check-circle text-brand-secondary text-lg shrink-0 mt-0.5"></i>
+                                <span><strong>1 videochiamata finale</strong> di 30 minuti</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="ph-fill ph-check-circle text-brand-secondary text-lg shrink-0 mt-0.5"></i>
+                                <span>Relazione scritta completa e link ai prodotti consigliati</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button onclick="openBookingModal('Percorso 2 Mesi (199€)')" class="mt-8 w-full py-3.5 px-5 rounded-2xl bg-brand-surface hover:bg-brand-primary hover:text-white text-brand-text font-semibold text-sm transition-all flex items-center justify-center gap-2">
+                        <span>Richiedi Informazioni</span>
+                        <i class="ph-bold ph-arrow-right"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Collapsible Comparison Table -->
+            <div id="comparison-table-container" class="hidden mt-12 bg-white rounded-3xl p-6 sm:p-8 border border-brand-primary/25 shadow-lg overflow-x-auto">
+                <div class="flex items-center justify-between mb-6">
+                    <h4 class="font-editorial text-2xl font-bold text-brand-text">Tabella Comparativa dei Percorsi</h4>
+                    <button onclick="toggleComparisonTable()" class="text-xs font-semibold text-brand-muted hover:text-brand-text flex items-center gap-1">
+                        Chiudi <i class="ph-bold ph-x"></i>
+                    </button>
+                </div>
+                <table class="w-full text-left border-collapse min-w-[640px]">
+                    <thead>
+                        <tr class="border-b border-brand-primary/20 text-xs uppercase tracking-wider text-brand-muted">
+                            <th class="py-3.5 px-4">Caratteristica</th>
+                            <th class="py-3.5 px-4">Singola (60€)</th>
+                            <th class="py-3.5 px-4">1 Mese (119€)</th>
+                            <th class="py-3.5 px-4 text-brand-primary font-bold">Intensivo 30gg (169€)</th>
+                            <th class="py-3.5 px-4">2 Mesi (199€)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-brand-primary/10 text-sm">
+                        <tr>
+                            <td class="py-3.5 px-4 font-medium">Questionario + Analisi Foto/Video</td>
+                            <td class="py-3.5 px-4 text-brand-secondary"><i class="ph-fill ph-check-circle text-lg"></i></td>
+                            <td class="py-3.5 px-4 text-brand-secondary"><i class="ph-fill ph-check-circle text-lg"></i></td>
+                            <td class="py-3.5 px-4 text-brand-primary"><i class="ph-fill ph-check-circle text-lg"></i></td>
+                            <td class="py-3.5 px-4 text-brand-secondary"><i class="ph-fill ph-check-circle text-lg"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3.5 px-4 font-medium">Durata Videoconsulenza Iniziale</td>
+                            <td class="py-3.5 px-4">60 min</td>
+                            <td class="py-3.5 px-4">60 min</td>
+                            <td class="py-3.5 px-4 font-semibold text-brand-primary">60 min</td>
+                            <td class="py-3.5 px-4 font-semibold">90 min</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3.5 px-4 font-medium">Monitoraggio / Assistenza</td>
+                            <td class="py-3.5 px-4 text-brand-muted">Non incluso</td>
+                            <td class="py-3.5 px-4">Settimanale (3 msg)</td>
+                            <td class="py-3.5 px-4 font-bold text-brand-primary">Giornaliero (1 msg/dì)</td>
+                            <td class="py-3.5 px-4">Settimanale (7 msg)</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3.5 px-4 font-medium">Videochiamata Finale (30 min)</td>
+                            <td class="py-3.5 px-4 text-brand-muted">—</td>
+                            <td class="py-3.5 px-4 text-brand-secondary"><i class="ph-fill ph-check-circle text-lg"></i></td>
+                            <td class="py-3.5 px-4 text-brand-primary"><i class="ph-fill ph-check-circle text-lg"></i></td>
+                            <td class="py-3.5 px-4 text-brand-secondary"><i class="ph-fill ph-check-circle text-lg"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="py-3.5 px-4 font-medium">Relazione Scritta + Link Prodotti</td>
+                            <td class="py-3.5 px-4 text-brand-secondary"><i class="ph-fill ph-check-circle text-lg"></i></td>
+                            <td class="py-3.5 px-4 text-brand-secondary"><i class="ph-fill ph-check-circle text-lg"></i></td>
+                            <td class="py-3.5 px-4 text-brand-primary"><i class="ph-fill ph-check-circle text-lg"></i></td>
+                            <td class="py-3.5 px-4 text-brand-secondary"><i class="ph-fill ph-check-circle text-lg"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CHI SONO & CERTIFICAZIONI SIUA -->
+    <section id="chi-sono" class="py-24 bg-brand-surface/80 border-y border-brand-primary/15 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Left Column: Portrait & Video Interview Trigger -->
+                <div class="lg:col-span-5 space-y-6 reveal">
+                    <div class="relative rounded-3xl overflow-hidden border-4 border-white shadow-xl bg-brand-bg aspect-[4/4.5]">
+                        <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=900&q=80" 
+                             alt="Daniela Tartarini - Feeling Felino" 
+                             onerror="this.src='https://placehold.co/700x800/FAF6F0/C87D65?text=Daniela+Tartarini'"
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/15 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 text-white">
+                            <span class="px-3 py-1 rounded-full bg-brand-secondary text-white text-xs font-semibold">La mia storia</span>
+                            <h3 class="font-editorial text-3xl font-bold mt-2">Daniela Tartarini</h3>
+                            <p class="text-xs text-white/85 mt-1">Consulente della Relazione Felina® diplomata SIUA</p>
+                        </div>
+                    </div>
+
+                    <!-- Video Interview Card ("Guarda la mia intervista") -->
+                    <div class="bg-white p-6 rounded-3xl border border-brand-primary/20 shadow-sm flex items-center justify-between gap-4">
+                        <div class="space-y-1">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-brand-primary">Video Presentazione</span>
+                            <h4 class="font-editorial text-xl font-bold text-brand-text">Guarda la mia intervista</h4>
+                            <p class="text-xs text-brand-muted">Scopri come svolgo le consulenze e cosa significa ascoltare davvero il tuo gatto.</p>
+                        </div>
+                        <button onclick="openVideoModal()" aria-label="Guarda la mia intervista" class="w-14 h-14 rounded-2xl bg-brand-primary hover:bg-brand-primaryDark text-white flex items-center justify-center shrink-0 shadow-md hover:scale-105 transition-transform">
+                            <i class="ph-fill ph-play text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Column: Biography & Interactive Certificates Grid -->
+                <div class="lg:col-span-7 space-y-6 reveal">
+                    <span class="text-xs uppercase tracking-[0.2em] text-brand-primary font-bold">Chi Sono</span>
+                    <h2 class="font-editorial text-4xl sm:text-5xl font-semibold text-brand-text leading-tight">
+                        Dallo studio delle culture orientali all’etologia felina.
+                    </h2>
+                    
+                    <div class="space-y-4 text-sm sm:text-base text-brand-muted leading-relaxed">
+                        <p>
+                            I gatti hanno sempre fatto parte della mia vita, ma la svolta è arrivata quando ho capito che <strong>amarli non basta: bisogna anche comprenderli nella loro unicità di specie</strong>.
+                        </p>
+                        <p>
+                            Dopo la laurea in <em>Storia e Civiltà Orientali</em> e diverse esperienze lavorative, ho deciso di ascoltare la mia vocazione più autentica. Tra il 2024 e il 2025 ho conseguito il <strong>Diploma di Consulente della Relazione Felina® presso la SIUA</strong> (Scuola di Interazione Uomo-Animale fondata da Roberto Marchesini), sposando l’approccio <strong>cognitivo-zooantropologico</strong>.
+                        </p>
+                        <p>
+                            Accanto allo studio accademico e alla formazione continua, ho arricchito la mia esperienza sul campo attraverso il volontariato, l’attività di <em>Cat Sitter</em> e l’osservazione libera dei gatti in natura e nei contesti urbani. Oggi aiuto i proprietari a guardare il mondo attraverso gli occhi del proprio gatto.
+                        </p>
+                    </div>
+
+                    <!-- Interactive Attestati & Formazione Continua Showcase -->
+                    <div class="pt-4">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                            <h3 class="font-editorial text-2xl font-bold text-brand-text flex items-center gap-2">
+                                <i class="ph-duotone ph-certificate text-brand-primary"></i>
+                                Attestati & Formazione Continua
+                            </h3>
+                            <span class="text-xs text-brand-muted">Clicca su un attestato per i dettagli</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="certificates-grid">
+                            <!-- Populated & Interactive via JS -->
+                        </div>
+
+                        <!-- Selected Certificate Detail Preview -->
+                        <div id="cert-detail-banner" class="mt-4 p-4 rounded-2xl bg-brand-bg border border-brand-primary/25 text-xs sm:text-sm text-brand-text flex items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <i class="ph-fill ph-seal-check text-brand-primary text-2xl shrink-0"></i>
+                                <span id="cert-detail-text"><strong>Diploma SIUA Consulente della Relazione Felina®:</strong> Formazione specialistica completa con approccio cognitivo-zooantropologico per la gestione relazionale e comportamentale del gatto.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE N+1 & FELINE SPACE CALCULATOR TOOL -->
+    <section id="calcolatore" class="py-20 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl p-8 sm:p-12 border border-brand-primary/25 shadow-xl reveal">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    
+                    <div class="lg:col-span-6 space-y-5">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-secondary/15 text-brand-secondary text-xs font-bold uppercase tracking-wider">
+                            <i class="ph-fill ph-calculator"></i> Strumento Interattivo Gratuito
+                        </div>
+                        <h2 class="font-editorial text-3xl sm:text-4xl font-bold text-brand-text leading-tight">
+                            La tua casa è davvero a misura di gatto? Calcola le risorse ideali
+                        </h2>
+                        <p class="text-sm sm:text-base text-brand-muted leading-relaxed">
+                            Nel mio articolo <em>"Inserire un nuovo gatto in casa"</em> e in <em>"Casa a misura di gatto"</em> spiego quanto sia fondamentale evitare la competizione sulle risorse. Usa questo calcolatore etologico per scoprire il numero minimo di lettiere (<strong>Regola N+1</strong>), ciotole e punti verticali consigliati.
+                        </p>
+
+                        <!-- Sliders -->
+                        <div class="space-y-5 pt-2">
+                            <div>
+                                <div class="flex justify-between text-sm font-semibold mb-2">
+                                    <label for="cat-count-slider">Quanti gatti vivono in casa?</label>
+                                    <span id="cat-count-label" class="text-brand-primary font-bold text-base">2 Gatti</span>
+                                </div>
+                                <input id="cat-count-slider" type="range" min="1" max="6" value="2" oninput="updateResourceCalculator()" class="w-full accent-brand-primary cursor-pointer h-2 bg-brand-surface rounded-lg">
+                                <div class="flex justify-between text-[11px] text-brand-muted mt-1">
+                                    <span>1 gatto</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6+ gatti</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between text-sm font-semibold mb-2">
+                                    <span>Stile di vita prevalente</span>
+                                </div>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <button type="button" id="env-indoor" onclick="setEnvMode('indoor')" class="py-2.5 px-4 rounded-xl text-xs font-semibold border-2 border-brand-primary bg-brand-primary/10 text-brand-text transition-all">
+                                        🏠 100% In Appartamento
+                                    </button>
+                                    <button type="button" id="env-outdoor" onclick="setEnvMode('outdoor')" class="py-2.5 px-4 rounded-xl text-xs font-semibold border border-brand-primary/20 bg-brand-surface/50 text-brand-muted transition-all">
+                                        🌿 Con Giardino / Balcone Sicuro
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Output Recommendations Card -->
+                    <div class="lg:col-span-6 bg-brand-surface/80 rounded-3xl p-6 sm:p-8 border border-brand-primary/20 space-y-6">
+                        <div class="flex items-center justify-between border-b border-brand-primary/15 pb-4">
+                            <div>
+                                <span class="text-xs uppercase tracking-wider text-brand-muted">Risultato Etologico</span>
+                                <h3 class="font-editorial text-2xl font-bold text-brand-text">Configurazione Consigliata</h3>
+                            </div>
+                            <i class="ph-duotone ph-paw-print text-3xl text-brand-primary"></i>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white p-4 rounded-2xl border border-brand-primary/15">
+                                <span class="text-xs text-brand-muted block">Lettiere (Regola N+1)</span>
+                                <span id="calc-litter" class="font-editorial text-3xl font-bold text-brand-primary">3 Lettiere</span>
+                                <span class="text-[11px] text-brand-muted block mt-1">In stanze diverse e tranquille</span>
+                            </div>
+                            <div class="bg-white p-4 rounded-2xl border border-brand-primary/15">
+                                <span class="text-xs text-brand-muted block">Punti Cibo & Acqua</span>
+                                <span id="calc-bowls" class="font-editorial text-3xl font-bold text-brand-secondary">2-3 Zone</span>
+                                <span class="text-[11px] text-brand-muted block mt-1">Acqua lontana dal cibo e lettiera</span>
+                            </div>
+                            <div class="bg-white p-4 rounded-2xl border border-brand-primary/15">
+                                <span class="text-xs text-brand-muted block">Tiragraffi & Mensole</span>
+                                <span id="calc-scratch" class="font-editorial text-3xl font-bold text-brand-accent">3+ Punti</span>
+                                <span class="text-[11px] text-brand-muted block mt-1">Vicino a zone di passaggio/riposo</span>
+                            </div>
+                            <div class="bg-white p-4 rounded-2xl border border-brand-primary/15">
+                                <span class="text-xs text-brand-muted block">Cuccia / Rifugi in alto</span>
+                                <span id="calc-hideouts" class="font-editorial text-3xl font-bold text-brand-text">3 Rifugi</span>
+                                <span class="text-[11px] text-brand-muted block mt-1">Vie di fuga verticali sempre libere</span>
+                            </div>
+                        </div>
+
+                        <p id="calc-tip" class="text-xs text-brand-muted bg-white/80 p-3.5 rounded-xl border border-brand-primary/10 leading-relaxed">
+                            💡 <strong>Nota di Daniela:</strong> Due lettiere affiancate nella stessa stanza vengono percepite dal gatto come un'unica grande lettiera. Distribuiscile in ambienti separati!
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPROFONDIMENTI DAL BLOG + VETRINA AMAZON -->
+    <section id="blog" class="py-20 bg-brand-surface/50 border-t border-brand-primary/15">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 reveal">
+                <div>
+                    <span class="text-xs uppercase tracking-[0.2em] text-brand-primary font-bold">Il Blog di Feeling Felino</span>
+                    <h2 class="font-editorial text-4xl sm:text-5xl font-semibold text-brand-text mt-1">
+                        Articoli & Guide per capirlo meglio
+                    </h2>
+                </div>
+                <p class="text-sm text-brand-muted max-w-md">
+                    Approfondimenti pratici scritti da Daniela Tartarini sulla gestione quotidiana, l’arricchimento ambientale e la serena convivenza.
+                </p>
+            </div>
+
+            <!-- Blog Articles Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
+                
+                <!-- Article 1: Inserire un nuovo gatto in casa -->
+                <article class="card-hover bg-white rounded-3xl overflow-hidden border border-brand-primary/20 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=900&q=80" 
+                                 alt="Inserire un nuovo gatto in casa" 
+                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3.5 py-1.5 rounded-full text-xs font-semibold text-brand-text shadow-sm">
+                                29 Settembre 2025 • Convivenza
+                            </div>
+                        </div>
+                        <div class="p-7 sm:p-8">
+                            <h3 class="font-editorial text-2xl sm:text-3xl font-bold text-brand-text hover:text-brand-primary transition-colors cursor-pointer" onclick="openArticleModal(0)">
+                                Inserire un nuovo gatto in casa: guida passo passo per una convivenza serena
+                            </h3>
+                            <p class="text-sm text-brand-muted mt-3 leading-relaxed">
+                                Accogliere un secondo micio è un passo meraviglioso ma delicato per un animale territoriale come il gatto. Scopri le 5 fasi dell'inserimento graduale, lo scambio degli odori, l'uso dei feromoni e gli errori da evitare.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-7 sm:px-8 pb-7 pt-2 flex items-center justify-between border-t border-brand-primary/10">
+                        <span class="text-xs text-brand-muted">Tempo di lettura: 5 min</span>
+                        <button onclick="openArticleModal(0)" class="text-xs font-bold uppercase tracking-wider text-brand-primary hover:text-brand-primaryDark flex items-center gap-1.5">
+                            Leggi l'articolo completo <i class="ph-bold ph-book-open"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <!-- Article 2: Casa a misura di gatto -->
+                <article class="card-hover bg-white rounded-3xl overflow-hidden border border-brand-primary/20 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1513360382564-850120167622?auto=format&fit=crop&w=900&q=80" 
+                                 alt="Casa a misura di gatto: come organizzarla" 
+                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3.5 py-1.5 rounded-full text-xs font-semibold text-brand-text shadow-sm">
+                                Benessere Ambientale • Etologia
+                            </div>
+                        </div>
+                        <div class="p-7 sm:p-8">
+                            <h3 class="font-editorial text-2xl sm:text-3xl font-bold text-brand-text hover:text-brand-primary transition-colors cursor-pointer" onclick="openArticleModal(1)">
+                                Casa a misura di gatto: come organizzarla per renderlo felice
+                            </h3>
+                            <p class="text-sm text-brand-muted mt-3 leading-relaxed">
+                                Per un gatto che vive in appartamento, lo spazio domestico rappresenta tutto il suo mondo. Come distribuire zona alimentazione, zona riposo, area eliminazione e percorsi verticali per prevenire stress e noia.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="px-7 sm:px-8 pb-7 pt-2 flex items-center justify-between border-t border-brand-primary/10">
+                        <span class="text-xs text-brand-muted">Tempo di lettura: 4 min</span>
+                        <button onclick="openArticleModal(1)" class="text-xs font-bold uppercase tracking-wider text-brand-primary hover:text-brand-primaryDark flex items-center gap-1.5">
+                            Leggi l'articolo completo <i class="ph-bold ph-book-open"></i>
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Vetrina Amazon / Prodotti Consigliati Banner -->
+            <div class="mt-14 bg-brand-bg rounded-3xl p-7 sm:p-10 border border-brand-primary/25 shadow-sm reveal">
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                    <div class="space-y-2 max-w-2xl">
+                        <span class="text-xs font-bold uppercase tracking-wider text-brand-secondary flex items-center gap-1.5">
+                            <i class="ph-fill ph-shopping-bag-open"></i> Selezione Etologica Approvata
+                        </span>
+                        <h3 class="font-editorial text-3xl font-bold text-brand-text">
+                            Visita la mia vetrina Amazon con i prodotti consigliati
+                        </h3>
+                        <p class="text-sm text-brand-muted leading-relaxed">
+                            Tiragraffi stabili e alti, fontanelle silenziose, lettiere ampie aperte, bacchette predatori e giochi di attivazione mentale che consiglio regolarmente durante le mie consulenze.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-3 shrink-0">
+                        <a href="https://www.amazon.it" target="_blank" rel="noopener noreferrer" class="bg-brand-text hover:bg-brand-primary text-white px-6 py-4 rounded-2xl text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 shadow-sm">
+                            <i class="ph-bold ph-storefront text-lg"></i>
+                            <span>Esplora la Vetrina Amazon</span>
+                            <i class="ph-bold ph-arrow-up-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GIFT CARD SECTION -->
+    <section id="gift-card" class="py-20 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-brand-surface via-white to-brand-surface rounded-3xl p-8 sm:p-12 border border-brand-primary/25 shadow-lg reveal">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    
+                    <!-- Left Copy & Configurator -->
+                    <div class="lg:col-span-6 space-y-5">
+                        <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-brand-primary/15 text-brand-primary text-xs font-bold uppercase tracking-wider">
+                            <i class="ph-fill ph-gift"></i> Idea Regalo Originale
+                        </span>
+                        <h2 class="font-editorial text-4xl sm:text-5xl font-semibold text-brand-text leading-tight">
+                            Gift Card Feeling Felino: regala armonia a chi ama un gatto
+                        </h2>
+                        <p class="text-sm sm:text-base text-brand-muted leading-relaxed">
+                            Un pensiero speciale per un’amica o un familiare che ha appena adottato un gattino o desidera approfondire il legame con il proprio compagno felino. Scegli il percorso da regalare e personalizza la dedica!
+                        </p>
+
+                        <div class="space-y-4 pt-2">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">1. Scegli il taglio della Gift Card</label>
+                                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                                    <button type="button" onclick="setGiftCard('Consulenza Singola', '60€')" class="gift-tier-btn py-2.5 px-3 rounded-xl border-2 border-brand-primary bg-brand-primary text-white text-xs font-bold transition-all">
+                                        60€ • Singola
+                                    </button>
+                                    <button type="button" onclick="setGiftCard('Percorso 1 Mese', '119€')" class="gift-tier-btn py-2.5 px-3 rounded-xl border border-brand-primary/25 bg-white text-brand-text text-xs font-bold hover:border-brand-primary transition-all">
+                                        119€ • 1 Mese
+                                    </button>
+                                    <button type="button" onclick="setGiftCard('Percorso Intensivo 30gg', '169€')" class="gift-tier-btn py-2.5 px-3 rounded-xl border border-brand-primary/25 bg-white text-brand-text text-xs font-bold hover:border-brand-primary transition-all">
+                                        169€ • Intensivo
+                                    </button>
+                                    <button type="button" onclick="setGiftCard('Percorso 2 Mesi', '199€')" class="gift-tier-btn py-2.5 px-3 rounded-xl border border-brand-primary/25 bg-white text-brand-text text-xs font-bold hover:border-brand-primary transition-all">
+                                        199€ • 2 Mesi
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-xs font-semibold text-brand-muted mb-1">Per chi è il regalo? (Opzionale)</label>
+                                    <input type="text" id="gift-recipient-input" oninput="updateGiftPreview()" placeholder="Es. Giulia & il piccolo Milo" class="w-full px-4 py-2.5 rounded-xl bg-white border border-brand-primary/25 text-sm focus:outline-none focus:border-brand-primary">
+                                </div>
+                                <div class="flex items-end">
+                                    <button onclick="requestGiftCard()" class="w-full py-2.5 px-5 rounded-xl bg-brand-primary hover:bg-brand-primaryDark text-white font-semibold text-sm transition-all flex items-center justify-center gap-2">
+                                        <i class="ph-bold ph-paper-plane-tilt"></i> Richiedi questa Gift Card
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Visual Live Gift Card Mockup -->
+                    <div class="lg:col-span-6">
+                        <div class="relative mx-auto max-w-md rounded-3xl p-8 bg-brand-text text-white shadow-2xl border border-brand-accent/40 overflow-hidden">
+                            <div class="absolute -right-12 -bottom-12 w-48 h-48 rounded-full bg-brand-primary/20 blur-2xl"></div>
+                            <div class="flex items-center justify-between border-b border-white/15 pb-5">
+                                <div class="flex items-center gap-2.5">
+                                    <div class="w-10 h-10 rounded-full bg-brand-primary/20 border border-brand-primary flex items-center justify-center text-brand-accent">
+                                        <i class="ph-fill ph-paw-print text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <span class="font-editorial text-xl font-bold block leading-none">Feeling Felino</span>
+                                        <span class="text-[10px] uppercase tracking-widest text-white/60">Gift Voucher Ufficiale</span>
+                                    </div>
+                                </div>
+                                <span id="gift-preview-amount" class="font-editorial text-4xl font-bold text-brand-accent">60€</span>
+                            </div>
+
+                            <div class="py-6 space-y-2">
+                                <span class="text-[11px] uppercase tracking-widest text-white/60">Percorso Incluso</span>
+                                <h4 id="gift-preview-title" class="font-editorial text-3xl font-semibold text-white">Consulenza Singola</h4>
+                                <p class="text-xs text-white/75 pt-1">
+                                    Dedicato a: <strong id="gift-preview-recipient" class="text-brand-accent">Chi ama profondamente il proprio gatto</strong>
+                                </p>
+                            </div>
+
+                            <div class="pt-4 border-t border-white/15 flex items-center justify-between text-[11px] text-white/60">
+                                <span>Daniela Tartarini • Consulente SIUA</span>
+                                <span>Validità 12 mesi</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIANZE REALI (ANNA, SIMONETTA, BARBARA) -->
+    <section id="testimonianze" class="py-24 bg-brand-surface/70 border-t border-brand-primary/15">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-3 mb-16 reveal">
+                <span class="text-xs uppercase tracking-[0.2em] text-brand-primary font-bold">Storie di Felinità</span>
+                <h2 class="font-editorial text-4xl sm:text-5xl font-semibold text-brand-text">
+                    Le parole di chi si è affidato a me
+                </h2>
+                <p class="text-base text-brand-muted">
+                    Ogni percorso è un viaggio condiviso. Ecco le testimonianze autentiche di Anna, Simonetta e Barbara.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch reveal">
+                
+                <!-- Review 1: Anna -->
+                <div class="card-hover bg-white p-8 rounded-3xl border border-brand-primary/20 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex text-brand-accent text-lg">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-surface text-brand-muted">Cambiamenti & Lettiera</span>
+                        </div>
+                        <p class="text-sm text-brand-text leading-relaxed italic">
+                            “Mi sono rivolta a Daniela in un momento di grandi cambiamenti in casa: il mio gatto aveva iniziato a miagolare insistentemente di notte e a fare pipì fuori dalla lettiera. Daniela ci ha ascoltati con una dolcezza e una competenza rare. Grazie ai suoi consigli pratici sull’organizzazione degli spazi e sulle routine di gioco, in poche settimane la situazione si è completamente rasserenata.”
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-5 border-t border-brand-primary/10 flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-full bg-brand-primary/20 text-brand-primary font-editorial font-bold text-xl flex items-center justify-center">
+                            A
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-brand-text">Anna</h4>
+                            <p class="text-xs text-brand-muted">Percorso 1 Mese</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2: Simonetta -->
+                <div class="card-hover bg-white p-8 rounded-3xl border border-brand-primary/20 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex text-brand-accent text-lg">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-surface text-brand-muted">Gattina di Colonia</span>
+                        </div>
+                        <p class="text-sm text-brand-text leading-relaxed italic">
+                            “Avevo appena adottato una gattina di colonia di soli 2 mesi, spaventatissima e diffidente. Avevo paura di sbagliare approccio e traumatizzarla. Daniela mi ha guidata passo dopo passo nel rispettare i suoi tempi, creando zone sicure e insegnandomi a leggere ogni piccolo segnale di apertura. Oggi la piccola dorme sulle mie gambe e si fida pienamente!”
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-5 border-t border-brand-primary/10 flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-full bg-brand-secondary/20 text-brand-secondary font-editorial font-bold text-xl flex items-center justify-center">
+                            S
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-brand-text">Simonetta</h4>
+                            <p class="text-xs text-brand-muted">Percorso Intensivo 30 Giorni</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3: Barbara -->
+                <div class="card-hover bg-white p-8 rounded-3xl border border-brand-primary/20 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="flex text-brand-accent text-lg">
+                                <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                            </div>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-surface text-brand-muted">Convivenza Multi-Gatto</span>
+                        </div>
+                        <p class="text-sm text-brand-text leading-relaxed italic">
+                            “Con Daniela abbiamo affrontato prima la difficile convivenza tra Agata e Celeste, e successivamente l’inserimento della nuova micia Blue. Avere Daniela al nostro fianco con il monitoraggio costante è stato fondamentale: ci ha insegnato a gestire gli odori, i momenti di apertura e le risorse senza ansia. Una professionista empatica e preparatissima che consiglio a tutti.”
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-5 border-t border-brand-primary/10 flex items-center gap-3">
+                        <div class="w-11 h-11 rounded-full bg-brand-accent/20 text-brand-accent font-editorial font-bold text-xl flex items-center justify-center">
+                            B
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm text-brand-text">Barbara</h4>
+                            <p class="text-xs text-brand-muted">Mamma umana di Agata, Celeste & Blue</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FREE PDF GUIDE OPT-IN & CONTACT SECTION -->
+    <section id="contatti" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Free PDF Guide Lead Magnet Box -->
+            <div id="guida-gratuita" class="mb-20 bg-brand-primary text-white rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden reveal">
+                <div class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-white/10 blur-2xl pointer-events-none"></div>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                    <div class="lg:col-span-7 space-y-3">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-wider">
+                            <i class="ph-fill ph-file-pdf"></i> Risorsa Omaggio
+                        </span>
+                        <h3 class="font-editorial text-3xl sm:text-4xl font-bold leading-tight">
+                            Scarica la guida gratuita sul benessere felino
+                        </h3>
+                        <p class="text-sm sm:text-base text-white/90 leading-relaxed">
+                            Iscriviti alla newsletter per ricevere subito in formato PDF i consigli pratici di Daniela Tartarini per arricchire l'ambiente domestico e comprendere i bisogni etologici del tuo gatto.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-5">
+                        <form onsubmit="handlePdfGuideSubmit(event)" class="space-y-3 bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20">
+                            <input type="text" required placeholder="Il tuo nome" class="w-full px-4 py-3 rounded-xl bg-white text-brand-text text-sm placeholder:text-brand-muted focus:outline-none">
+                            <input type="email" required placeholder="La tua migliore email" class="w-full px-4 py-3 rounded-xl bg-white text-brand-text text-sm placeholder:text-brand-muted focus:outline-none">
+                            <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-brand-text hover:bg-black text-white font-semibold text-sm transition-all flex items-center justify-center gap-2">
+                                <span>Inviami la Guida Gratuita</span>
+                                <i class="ph-bold ph-download-simple"></i>
+                            </button>
+                            <p id="pdf-feedback" class="hidden text-xs text-center font-semibold bg-white/20 py-2 rounded-lg"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Contact Form & Info -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start reveal">
+                
+                <!-- Left Contact Info -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs uppercase tracking-[0.2em] text-brand-primary font-bold">Contatti</span>
+                    <h2 class="font-editorial text-4xl sm:text-5xl font-semibold text-brand-text leading-tight">
+                        Parliamo del tuo gatto.
+                    </h2>
+                    <p class="text-base text-brand-muted leading-relaxed">
+                        Raccontami brevemente la vostra situazione o quale percorso ti interessa. Ti risponderò al più presto per fissare il nostro appuntamento conoscitivo o fornirti tutte le informazioni.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <a href="mailto:info@feelingfelino.it" class="flex items-center gap-4 p-4 rounded-2xl bg-brand-surface/70 hover:bg-brand-surface transition-colors border border-brand-primary/15">
+                            <div class="w-12 h-12 rounded-xl bg-brand-primary/15 text-brand-primary flex items-center justify-center shrink-0">
+                                <i class="ph-duotone ph-envelope-simple text-2xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-brand-muted block">Scrivimi via Email</span>
+                                <strong class="text-sm sm:text-base text-brand-text">info@feelingfelino.it</strong>
+                            </div>
+                        </a>
+
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-brand-surface/70 border border-brand-primary/15">
+                            <div class="w-12 h-12 rounded-xl bg-brand-secondary/15 text-brand-secondary flex items-center justify-center shrink-0">
+                                <i class="ph-duotone ph-video-camera text-2xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-brand-muted block">Modalità Consulenze</span>
+                                <strong class="text-sm sm:text-base text-brand-text">Online in tutta Italia (Google Meet / WhatsApp)</strong>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-brand-surface/70 border border-brand-primary/15">
+                            <div class="w-12 h-12 rounded-xl bg-brand-accent/20 text-brand-accent flex items-center justify-center shrink-0">
+                                <i class="ph-duotone ph-instagram-logo text-2xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-brand-muted block">Seguimi sui Social</span>
+                                <strong class="text-sm sm:text-base text-brand-text">@feelingfelino • Contenuti e pillole etologiche</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Interactive Contact Form -->
+                <div class="lg:col-span-7 bg-white rounded-3xl p-8 sm:p-10 border border-brand-primary/25 shadow-lg">
+                    <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">Il tuo Nome e Cognome *</label>
+                                <input type="text" id="contact-name" required placeholder="Es. Sara Rossi" class="w-full px-4 py-3.5 rounded-xl bg-brand-bg border border-brand-primary/25 text-sm focus:outline-none focus:border-brand-primary">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">La tua Email *</label>
+                                <input type="email" id="contact-email" required placeholder="sara@esempio.it" class="w-full px-4 py-3.5 rounded-xl bg-brand-bg border border-brand-primary/25 text-sm focus:outline-none focus:border-brand-primary">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">Nome del Gatto (o dei Gatti)</label>
+                                <input type="text" id="contact-catname" placeholder="Es. Oliver e Luna" class="w-full px-4 py-3.5 rounded-xl bg-brand-bg border border-brand-primary/25 text-sm focus:outline-none focus:border-brand-primary">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">Percorso di Interesse</label>
+                                <select id="contact-package" class="w-full px-4 py-3.5 rounded-xl bg-brand-bg border border-brand-primary/25 text-sm focus:outline-none focus:border-brand-primary">
+                                    <option value="Non sono sicuro/a - Vorrei un consiglio">Non sono sicuro/a (Vorrei un consiglio)</option>
+                                    <option value="Consulenza Singola (60€)">Consulenza Singola (60€)</option>
+                                    <option value="Percorso 1 Mese (119€)">Percorso 1 Mese (119€)</option>
+                                    <option value="Percorso Intensivo 30 Giorni (169€)">Percorso Intensivo 30 Giorni (169€)</option>
+                                    <option value="Percorso 2 Mesi (199€)">Percorso 2 Mesi (199€)</option>
+                                    <option value="Gift Card Feeling Felino">Acquisto Gift Card</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-brand-muted mb-2">Raccontami brevemente di voi *</label>
+                            <textarea id="contact-message" rows="4" required placeholder="Descrivi brevemente l'età del gatto, la composizione familiare e il motivo per cui desideri contattarmi..." class="w-full px-4 py-3.5 rounded-xl bg-brand-bg border border-brand-primary/25 text-sm focus:outline-none focus:border-brand-primary"></textarea>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <input type="checkbox" id="privacy-check" required class="mt-1 accent-brand-primary w-4 h-4 rounded cursor-pointer">
+                            <label for="privacy-check" class="text-xs text-brand-muted leading-relaxed">
+                                Ho letto e accetto la <button type="button" onclick="openLegalModal()" class="underline text-brand-primary font-semibold">Privacy Policy e i Termini e Condizioni</button> (ai sensi del Regolamento UE 2016/679 GDPR).
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 px-8 rounded-2xl bg-brand-primary hover:bg-brand-primaryDark text-white font-semibold text-base shadow-lg shadow-brand-primary/20 transition-all flex items-center justify-center gap-2">
+                            <span>Invia Messaggio a Daniela</span>
+                            <i class="ph-bold ph-paper-plane-right"></i>
+                        </button>
+
+                        <div id="contact-success-box" class="hidden p-4 rounded-2xl bg-brand-secondary/15 border border-brand-secondary text-brand-text text-sm">
+                            <div class="flex items-center gap-2 font-bold text-brand-secondary">
+                                <i class="ph-fill ph-check-circle text-xl"></i>
+                                <span>Messaggio preparato con successo!</span>
+                            </div>
+                            <p class="text-xs text-brand-muted mt-1">
+                                Grazie per avermi scritto. Riceverai risposta all'indirizzo indicato entro 24/48 ore lavorative, oppure puoi inviare direttamente a <strong>info@feelingfelino.it</strong>.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER WITH OFFICIAL DATA & LEGAL LINKS -->
+    <footer class="bg-brand-text text-white/85 pt-16 pb-12 border-t border-brand-primary/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+                
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-primary/20 border border-brand-primary flex items-center justify-center text-brand-accent">
+                            <i class="ph-fill ph-paw-print text-xl"></i>
+                        </div>
+                        <span class="font-editorial text-2xl font-bold text-white">Feeling Felino</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-white/70 max-w-sm leading-relaxed">
+                        Consulenze sulla relazione felina con approccio cognitivo-zooantropologico. Costruiamo insieme una convivenza serena e consapevole con il tuo gatto.
+                    </p>
+                    <p class="text-xs text-brand-accent font-medium">
+                        Consulente della Relazione Felina® certificata SIUA
+                    </p>
+                </div>
+
+                <div class="md:col-span-3 space-y-2.5 text-sm">
+                    <h4 class="font-editorial text-lg font-bold text-white mb-3">Navigazione</h4>
+                    <ul class="space-y-2 text-white/70 text-xs sm:text-sm">
+                        <li><a href="#home" class="hover:text-brand-accent transition-colors">Home</a></li>
+                        <li><a href="#chi-sono" class="hover:text-brand-accent transition-colors">Chi sono & Attestati</a></li>
+                        <li><a href="#percorsi" class="hover:text-brand-accent transition-colors">Percorsi di Consulenza</a></li>
+                        <li><a href="#gift-card" class="hover:text-brand-accent transition-colors">Gift Card</a></li>
+                        <li><a href="#blog" class="hover:text-brand-accent transition-colors">Blog & Articoli</a></li>
+                        <li><a href="#contatti" class="hover:text-brand-accent transition-colors">Contatti</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4 space-y-2.5 text-xs sm:text-sm text-white/70">
+                    <h4 class="font-editorial text-lg font-bold text-white mb-3">Dati Ufficiali & Legali</h4>
+                    <p><strong>Titolare:</strong> Daniela Tartarini</p>
+                    <p><strong>Sede:</strong> Via Daniele Manin 16/5</p>
+                    <p><strong>P.IVA:</strong> 04283621201</p>
+                    <p><strong>Email:</strong> <a href="mailto:info@feelingfelino.it" class="underline hover:text-brand-accent">info@feelingfelino.it</a></p>
+                    <div class="pt-3 flex flex-wrap gap-3">
+                        <button onclick="openLegalModal()" class="underline hover:text-white text-xs">Termini e condizioni</button>
+                        <span>•</span>
+                        <button onclick="openLegalModal()" class="underline hover:text-white text-xs">Privacy & Cookie Policy</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 text-center text-xs text-white/50">
+                Copyright © 2026 Daniela Tartarini – Via Daniele Manin 16/5 – P.Iva: 04283621201 – info@feelingfelino.it – Tutti i diritti riservati
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING PALETTE SWITCHER DOCK (Bottom Left) -->
+    <div class="fixed bottom-5 left-5 z-40">
+        <div id="palette-panel" class="hidden mb-3 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-2xl border border-brand-primary/25 w-64 space-y-3">
+            <div class="flex items-center justify-between border-b border-brand-primary/15 pb-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-text">Palette Feeling Felino</span>
+                <button onclick="togglePalettePanel()" class="text-brand-muted hover:text-brand-text"><i class="ph-bold ph-x"></i></button>
+            </div>
+            <div class="space-y-2">
+                <button onclick="applyTheme('default')" class="w-full p-2 rounded-xl hover:bg-brand-surface flex items-center justify-between text-xs font-medium">
+                    <span>Terracotta & Crema (Originale)</span>
+                    <span class="flex gap-1"><i class="w-3.5 h-3.5 rounded-full bg-[#C87D65]"></i><i class="w-3.5 h-3.5 rounded-full bg-[#7A9A8B]"></i><i class="w-3.5 h-3.5 rounded-full bg-[#FAF6F0] border"></i></span>
+                </button>
+                <button onclick="applyTheme('rose')" class="w-full p-2 rounded-xl hover:bg-brand-surface flex items-center justify-between text-xs font-medium">
+                    <span>Rosa Cipria & Malva</span>
+                    <span class="flex gap-1"><i class="w-3.5 h-3.5 rounded-full bg-[#B5727A]"></i><i class="w-3.5 h-3.5 rounded-full bg-[#8B9D83]"></i><i class="w-3.5 h-3.5 rounded-full bg-[#FDF9F8] border"></i></span>
+                </button>
+                <button onclick="applyTheme('sage')" class="w-full p-2 rounded-xl hover:bg-brand-surface flex items-center justify-between text-xs font-medium">
+                    <span>Verde Salvia & Sabbia</span>
+                    <span class="flex gap-1"><i class="w-3.5 h-3.5 rounded-full bg-[#5F8575]"></i><i class="w-3.5 h-3.5 rounded-full bg-[#C87D65]"></i><i class="w-3.5 h-3.5 rounded-full bg-[#F7F6F2] border"></i></span>
+                </button>
+            </div>
+        </div>
+        <button onclick="togglePalettePanel()" title="Personalizza Palette Colori" class="bg-white/90 hover:bg-white text-brand-text px-4 py-2.5 rounded-full shadow-lg border border-brand-primary/30 text-xs font-semibold flex items-center gap-2 transition-all">
+            <i class="ph-duotone ph-palette text-brand-primary text-lg"></i>
+            <span class="hidden sm:inline">Stile & Palette</span>
+        </button>
+    </div>
+
+    <!-- MODAL 1: INTERACTIVE QUIZ ("TROVA IL PERCORSO GIUSTO PER TE") -->
+    <div id="quiz-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-brand-bg rounded-3xl max-w-lg w-full p-6 sm:p-8 border border-brand-primary/30 shadow-2xl relative">
+            <button onclick="closeQuizModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-brand-surface flex items-center justify-center text-brand-muted hover:text-brand-text">
+                <i class="ph-bold ph-x"></i>
+            </button>
+
+            <div id="quiz-content" class="space-y-5">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-primary">Test Orientativo in 2 passi</span>
+                <h3 id="quiz-question-title" class="font-editorial text-3xl font-bold text-brand-text">
+                    Qual è la tua esigenza principale in questo momento?
+                </h3>
+                <div id="quiz-options" class="space-y-3 pt-2">
+                    <!-- Injected via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: BLOG READER MODAL -->
+    <div id="article-modal" class="fixed inset-0 z-50 hidden bg-black/65 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-brand-bg rounded-3xl max-w-3xl w-full max-h-[88vh] overflow-y-auto p-6 sm:p-10 border border-brand-primary/30 shadow-2xl relative my-8">
+            <button onclick="closeArticleModal()" class="sticky top-2 float-right w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-brand-text hover:text-brand-primary">
+                <i class="ph-bold ph-x text-lg"></i>
+            </button>
+            <div id="article-modal-body" class="space-y-5 pr-2">
+                <!-- Populated via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: VIDEO INTERVIEW & LEGAL MODAL -->
+    <div id="generic-modal" class="fixed inset-0 z-50 hidden bg-black/65 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-brand-bg rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 sm:p-8 border border-brand-primary/30 shadow-2xl relative">
+            <button onclick="closeGenericModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-brand-surface flex items-center justify-center text-brand-muted hover:text-brand-text">
+                <i class="ph-bold ph-x"></i>
+            </button>
+            <div id="generic-modal-body"></div>
+        </div>
+    </div>
+
+    <!-- APPLICATION JAVASCRIPT -->
+    <script>
+        // 1. Cat Body Language Micro-Widget Data
+        const catSignals = [
+            {
+                title: "Coda alta a punto interrogativo ❓",
+                desc: "“Sono felice di vederti! È un invito amichevole all'interazione sociale e alle coccole.”"
+            },
+            {
+                title: "Sbattimento lento delle palpebre 😉",
+                desc: "“Mi fido di te e mi sento al sicuro in tua presenza.” Prova a ricambiare socchiudendo lentamente gli occhi!"
+            },
+            {
+                title: "Orecchie ruotate di lato (“ ad aeroplanino”) ✈️",
+                desc: "“Sono incerto o infastidito da uno stimolo.” Meglio lasciargli spazio e non forzare il contatto fisico."
+            },
+            {
+                title: "Strusciamento del muso sui mobili 🛋️",
+                desc: "Sta rilasciando feromoni facciali d'appartenenza per rendere l'ambiente familiare e rassicurante."
+            }
+        ];
+        let currentSignalIndex = 0;
+
+        function cycleCatSignal() {
+            currentSignalIndex = (currentSignalIndex + 1) % catSignals.length;
+            document.getElementById('cat-signal-title').textContent = catSignals[currentSignalIndex].title;
+            document.getElementById('cat-signal-desc').textContent = catSignals[currentSignalIndex].desc;
+        }
+
+        // 2. Diagnostic Cards Interactive Data ("Perché contattarmi?")
+        const diagnosticData = [
+            {
+                badge: "Approccio Daniela • Problemi Comportamentali",
+                title: "Pipì fuori dalla lettiera o aggressività? Non è mai un dispetto.",
+                text: "Escludendo prima eventuali cause mediche con il veterinario, analizziamo insieme posizionamento delle risorse, substrato, stress ambientale e dinamiche relazionali. Spesso bastano modifiche mirate e un monitoraggio costante per risolvere il disagio alla radice.",
+                pkg: "Percorso Intensivo 30 Giorni (169€) o 1 Mese (119€)"
+            },
+            {
+                badge: "Approccio Daniela • Comunicazione & Linguaggio",
+                title: "Impara a leggere posture, vocalizzi e desideri del tuo gatto.",
+                text: "Spesso accarezziamo il gatto nel momento o nel punto sbagliato, oppure interpretiamo male le sue richieste di gioco predatorio. Durante la videoconsulenza analizzeremo i tuoi video per tradurre insieme il suo vocabolario unico.",
+                pkg: "Consulenza Singola (60€) o Percorso 1 Mese (119€)"
+            },
+            {
+                badge: "Approccio Daniela • Convivenza Multi-Gatto",
+                title: "Inserire un nuovo micio o sciogliere tensioni tra gatti conviventi.",
+                text: "Il gatto è una specie territoriale: forzare gli incontri crea paure durature. Ti guiderò attraverso le 5 fasi dell'inserimento graduale (spazio isolato, scambio odori, feromoni e incontri positivi) fino alla piena armonia.",
+                pkg: "Percorso Intensivo 30 Giorni (169€) o Percorso 2 Mesi (199€)"
+            },
+            {
+                badge: "Approccio Daniela • Grandi Cambiamenti in Famiglia",
+                title: "Trasloco, ristrutturazione o arrivo di un bebè in vista?",
+                text: "Preparare il gatto in anticipo riduce drasticamente lo stress da cambiamento. Creiamo insieme zone rifugio sicure, routine prevedibili e strategie olfattive per accompagnarlo con serenità nella nuova fase della vostra vita.",
+                pkg: "Consulenza Singola (60€) o Percorso 1 Mese (119€)"
+            }
+        ];
+
+        function selectDiagnosticCard(idx) {
+            for (let i = 0; i < 4; i++) {
+                const el = document.getElementById('diag-card-' + i);
+                if (i === idx) {
+                    el.classList.add('border-2', 'border-brand-primary');
+                    el.classList.remove('border', 'border-brand-primary/20');
+                } else {
+                    el.classList.remove('border-2', 'border-brand-primary');
+                    el.classList.add('border', 'border-brand-primary/20');
+                }
+            }
+            const d = diagnosticData[idx];
+            document.getElementById('diag-insight-badge').textContent = d.badge;
+            document.getElementById('diag-insight-title').textContent = d.title;
+            document.getElementById('diag-insight-text').textContent = d.text;
+            document.getElementById('diag-recommended-pkg').textContent = d.pkg;
+        }
+
+        // 3. Official Certificates & Continuous Education Showcase
+        const certificates = [
+            {
+                title: "Diploma Consulente della Relazione Felina®",
+                org: "SIUA (Scuola Interazione Uomo Animale)",
+                detail: "Diploma ufficiale SIUA (2024–2025): formazione specialistica con approccio cognitivo-zooantropologico per la consulenza relazionale e comportamentale felina."
+            },
+            {
+                title: "Attestato Percorso Salute Felina",
+                org: "Formazione Specialistica",
+                detail: "Approfondimento sul legame tra benessere fisico, segnali di dolore somatico e ripercussioni sul comportamento del gatto."
+            },
+            {
+                title: "Attestato Obiettivo Felinità",
+                org: "Etologia e Comportamento",
+                detail: "Studio approfondito sulle motivazioni di specie, gioco predatorio e rispetto dell'etogramma felino in ambiente domestico."
+            },
+            {
+                title: "Gestione del Gattino appena trovato",
+                org: "Sviluppo Etologico Precoce",
+                detail: "Competenze dedicate all'accoglienza, socializzazione primaria e corretta gestione dei gattini orfani o provenienti da colonia."
+            },
+            {
+                title: "Il Gatto Anziano (Senior Cat)",
+                org: "Benessere nella Terza Età",
+                detail: "Adattamento ambientale, supporto cognitivo e gestione empatica dei cambiamenti comportamentali nel gatto senior."
+            },
+            {
+                title: "Microbiota e Comportamento Felino",
+                org: "Asse Intestino-Cervello",
+                detail: "Aggiornamento scientifico sull'influenza dell'alimentazione e del microbiota intestinale sugli stati d'ansia e stress nel gatto."
+            },
+            {
+                title: "Webinar 10 Incontri SIUA",
+                org: "Aggiornamento Continuo SIUA",
+                detail: "Ciclo intensivo di seminari clinici e relazionali tenuti dai docenti della Scuola di Interazione Uomo Animale."
+            },
+            {
+                title: "Il Giardino Aromatico per Felini",
+                org: "Arricchimento Olfattivo & Botanico",
+                detail: "Utilizzo sicuro di erbe aromatiche e piante (nepeta, valeriana, matatabi) per stimolare l'olfatto e il rilassamento del gatto."
+            }
+        ];
+
+        function renderCertificates() {
+            const container = document.getElementById('certificates-grid');
+            container.innerHTML = certificates.map((c, idx) => `
+                <button type="button" onclick="showCertificateDetail(${idx})" class="text-left p-3.5 rounded-2xl bg-white hover:bg-brand-primary/10 border border-brand-primary/20 transition-all flex items-start gap-3 group">
+                    <div class="w-8 h-8 rounded-xl bg-brand-primary/15 text-brand-primary flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-brand-primary group-hover:text-white transition-colors">
+                        <i class="ph-bold ph-medal"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold text-brand-text leading-snug">${c.title}</p>
+                        <p class="text-[11px] text-brand-muted">${c.org}</p>
+                    </div>
+                </button>
+            `).join('');
+        }
+
+        function showCertificateDetail(idx) {
+            const c = certificates[idx];
+            document.getElementById('cert-detail-text').innerHTML = `<strong>${c.title} (${c.org}):</strong> ${c.detail}`;
+        }
+
+        // 4. N+1 Resource Calculator Logic
+        let currentEnvMode = 'indoor';
+        function setEnvMode(mode) {
+            currentEnvMode = mode;
+            const btnIn = document.getElementById('env-indoor');
+            const btnOut = document.getElementById('env-outdoor');
+            if (mode === 'indoor') {
+                btnIn.className = "py-2.5 px-4 rounded-xl text-xs font-semibold border-2 border-brand-primary bg-brand-primary/10 text-brand-text transition-all";
+                btnOut.className = "py-2.5 px-4 rounded-xl text-xs font-semibold border border-brand-primary/20 bg-brand-surface/50 text-brand-muted transition-all";
+            } else {
+                btnOut.className = "py-2.5 px-4 rounded-xl text-xs font-semibold border-2 border-brand-primary bg-brand-primary/10 text-brand-text transition-all";
+                btnIn.className = "py-2.5 px-4 rounded-xl text-xs font-semibold border border-brand-primary/20 bg-brand-surface/50 text-brand-muted transition-all";
+            }
+            updateResourceCalculator();
+        }
+
+        function updateResourceCalculator() {
+            const cats = parseInt(document.getElementById('cat-count-slider').value, 10);
+            document.getElementById('cat-count-label').textContent = cats === 1 ? '1 Gatto' : `${cats} Gatti`;
+            
+            const litters = cats + 1;
+            const bowls = cats === 1 ? '2 Zone' : `${cats + 1} Zone`;
+            const scratchers = currentEnvMode === 'indoor' ? cats + 2 : cats + 1;
+            const hideouts = cats + 1;
+
+            document.getElementById('calc-litter').textContent = `${litters} Lettiere`;
+            document.getElementById('calc-bowls').textContent = bowls;
+            document.getElementById('calc-scratch').textContent = `${scratchers}+ Punti`;
+            document.getElementById('calc-hideouts').textContent = `${hideouts} Rifugi`;
+        }
+
+        // 5. Comparison Table Toggle
+        function toggleComparisonTable() {
+            const box = document.getElementById('comparison-table-container');
+            const btnText = document.getElementById('compare-btn-text');
+            box.classList.toggle('hidden');
+            btnText.textContent = box.classList.contains('hidden') ? 'Confronta tutti i dettagli' : 'Nascondi tabella comparativa';
+        }
+
+        // 6. Booking Pre-fill Helper
+        function openBookingModal(packageName) {
+            const selectEl = document.getElementById('contact-package');
+            selectEl.value = packageName;
+            document.getElementById('contatti').scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => {
+                document.getElementById('contact-name').focus();
+            }, 600);
+        }
+
+        // 7. Gift Card Customizer
+        let selectedGiftTitle = 'Consulenza Singola';
+        let selectedGiftPrice = '60€';
+
+        function setGiftCard(title, price) {
+            selectedGiftTitle = title;
+            selectedGiftPrice = price;
+            document.getElementById('gift-preview-title').textContent = title;
+            document.getElementById('gift-preview-amount').textContent = price;
+
+            const buttons = document.querySelectorAll('.gift-tier-btn');
+            buttons.forEach(btn => {
+                if (btn.textContent.includes(price)) {
+                    btn.className = "gift-tier-btn py-2.5 px-3 rounded-xl border-2 border-brand-primary bg-brand-primary text-white text-xs font-bold transition-all";
+                } else {
+                    btn.className = "gift-tier-btn py-2.5 px-3 rounded-xl border border-brand-primary/25 bg-white text-brand-text text-xs font-bold hover:border-brand-primary transition-all";
+                }
+            });
+        }
+
+        function updateGiftPreview() {
+            const val = document.getElementById('gift-recipient-input').value.trim();
+            document.getElementById('gift-preview-recipient').textContent = val || 'Chi ama profondamente il proprio gatto';
+        }
+
+        function requestGiftCard() {
+            const recipient = document.getElementById('gift-recipient-input').value.trim();
+            const selectEl = document.getElementById('contact-package');
+            selectEl.value = 'Gift Card Feeling Felino';
+            const msgEl = document.getElementById('contact-message');
+            msgEl.value = `Ciao Daniela, vorrei acquistare una Gift Card per "${selectedGiftTitle} (${selectedGiftPrice})"${recipient ? ' dedicata a ' + recipient : ''}. Potresti indicarmi come procedere?`;
+            document.getElementById('contatti').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 8. Blog Full Articles Reader Modal
+        const fullArticles = [
+            {
+                date: "29 Settembre 2025",
+                title: "Inserire un nuovo gatto in casa: guida passo passo per una convivenza serena",
+                content: `
+                    <p class="text-base text-brand-muted leading-relaxed">Accogliere un nuovo gatto quando in casa vive già un altro micio è un'esperienza meravigliosa, ma richiede pazienza, empatia e strategia. Il gatto è un animale fortemente territoriale: l'arrivo improvviso di un estraneo nel suo spazio sicuro può generare paura, stress e conflitti.</p>
+                    <h4 class="font-editorial text-2xl font-bold text-brand-text pt-3">Le 5 Fasi dell'Inserimento Graduale</h4>
+                    <ol class="list-decimal pl-5 space-y-2 text-sm text-brand-text leading-relaxed">
+                        <li><strong>Creazione della "Stanza Sicura" (Isolamento iniziale):</strong> Al suo arrivo, il nuovo gatto deve avere una stanza tutta per sé con lettiera, acqua, cibo, cuccia e tiragraffi. I due gatti non devono vedersi subito.</li>
+                        <li><strong>Scambio degli odori:</strong> Prima ancora di vedersi, i gatti si conoscono attraverso l'olfatto. Scambia panni, coperte o spazzole usate sull'uno e sull'altro, associando l'odore del nuovo arrivato a premietti o momenti di gioco.</li>
+                        <li><strong>Utilizzo dei feromoni:</strong> I diffusori di feromoni appaganti aiutano a creare un'atmosfera chimica di serenità in entrambi gli ambienti.</li>
+                        <li><strong>Contatto visivo protetto:</strong> Quando nessuno dei due soffia o mostra tensione davanti alla porta chiusa, si passa a brevi incontri visivi tramite una rete divisoria o socchiudendo la porta in sicurezza, durante il pasto o il gioco.</li>
+                        <li><strong>Incontri liberi supervisionati e Regola N+1:</strong> Prima della convivenza libera, assicurati che le risorse siano moltiplicate (numero di gatti + 1 per lettiere, ciotole e cucce in alto) così che nessuno debba competere.</li>
+                    </ol>
+                    <div class="p-4 rounded-2xl bg-brand-surface border border-brand-primary/20 text-xs text-brand-text mt-4">
+                        <strong>Cosa evitare assolutamente:</strong> Non mettere mai i due gatti faccia a faccia appena arrivati e non sgridare mai un gatto che soffia o ringhia (sta solo comunicando paura e distanza!).
+                    </div>
+                `
+            },
+            {
+                date: "Guida Etologica • Ambiente",
+                title: "Casa a misura di gatto: come organizzarla per renderlo felice",
+                content: `
+                    <p class="text-base text-brand-muted leading-relaxed">Un gatto che vive in casa dipende interamente da come noi organizziamo il suo spazio vitale. Un ambiente povero di stimoli o con risorse posizionate in modo errato è tra le prime cause di stress, graffiature indesiderate ed eliminazioni fuori dalla lettiera.</p>
+                    <h4 class="font-editorial text-2xl font-bold text-brand-text pt-3">I Pilastri dell'Arricchimento Ambientale</h4>
+                    <ul class="list-disc pl-5 space-y-2 text-sm text-brand-text leading-relaxed">
+                        <li><strong>Separazione delle Aree Funzionali:</strong> In natura il gatto non mangia mai dove elimina e non beve vicino alle prede. Posiziona la ciotola dell'acqua (o la fontanella) distante sia dal cibo che dalla lettiera.</li>
+                        <li><strong>Verticalità e Punti di Osservazione:</strong> Per i felini l'altezza equivale a sicurezza e controllo del territorio. Mensole, tiragraffi a soffitto e passaggi sopra i mobili permettono al gatto di osservare l'ambiente sentendosi protetto.</li>
+                        <li><strong>Zona Eliminazione Tranquilla:</strong> La lettiera non va nascosta accanto alla lavatrice rumorosa o in corridoi di continuo passaggio. Scegli cassette ampie e un substrato fine e inodore.</li>
+                        <li><strong>Gioco Predatorio Quotidiano:</strong> Dedica ogni giorno sessioni di gioco con bacchette che simulino il movimento della preda (uccellino o topolino), concludendo sempre con la cattura e un piccolo pasto.</li>
+                    </ul>
+                `
+            }
+        ];
+
+        function openArticleModal(idx) {
+            const art = fullArticles[idx];
+            const modalBody = document.getElementById('article-modal-body');
+            modalBody.innerHTML = `
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-primary">${art.date}</span>
+                <h2 class="font-editorial text-3xl sm:text-4xl font-bold text-brand-text">${art.title}</h2>
+                <div class="space-y-4 pt-2">${art.content}</div>
+                <div class="pt-6 border-t border-brand-primary/20 flex flex-wrap items-center justify-between gap-4">
+                    <span class="text-xs text-brand-muted">Vuoi un piano personalizzato per i tuoi gatti?</span>
+                    <button onclick="closeArticleModal(); openBookingModal('Consulenza Singola (60€)')" class="bg-brand-primary text-white px-5 py-2.5 rounded-xl text-xs font-semibold">
+                        Prenota una Consulenza con Daniela
+                    </button>
+                </div>
+            `;
+            document.getElementById('article-modal').classList.remove('hidden');
+        }
+
+        function closeArticleModal() {
+            document.getElementById('article-modal').classList.add('hidden');
+        }
+
+        // 9. Interactive Quiz Modal ("Trova il percorso giusto")
+        function openQuizModal() {
+            renderQuizStep1();
+            document.getElementById('quiz-modal').classList.remove('hidden');
+        }
+        function closeQuizModal() {
+            document.getElementById('quiz-modal').classList.add('hidden');
+        }
+
+        function renderQuizStep1() {
+            document.getElementById('quiz-question-title').textContent = "Qual è la tua situazione attuale?";
+            document.getElementById('quiz-options').innerHTML = `
+                <button onclick="showQuizRecommendation('Consulenza Singola (60€)', 'Perfetta per avere indicazioni mirate su come organizzare casa, preparare l’arrivo di un micio o chiarire dubbi specifici in 60 minuti + relazione scritta.')" class="w-full text-left p-4 rounded-2xl bg-white hover:bg-brand-primary/10 border border-brand-primary/20 text-sm font-medium flex items-center justify-between">
+                    <span>1. Voglio organizzare gli spazi o chiarire dubbi specifici</span>
+                    <i class="ph-bold ph-caret-right text-brand-primary"></i>
+                </button>
+                <button onclick="showQuizRecommendation('Percorso 1 Mese (119€)', 'Con 60 min di consulenza iniziale, 3 aggiornamenti settimanali e videochiamata finale avrai tutto il supporto per risolvere abitudini indesiderate con gradualità.')" class="w-full text-left p-4 rounded-2xl bg-white hover:bg-brand-primary/10 border border-brand-primary/20 text-sm font-medium flex items-center justify-between">
+                    <span>2. Il mio gatto mostra un disagio e vorrei essere seguito/a per 1 mese</span>
+                    <i class="ph-bold ph-caret-right text-brand-primary"></i>
+                </button>
+                <button onclick="showQuizRecommendation('Percorso Intensivo 30 Giorni (169€)', 'Il più scelto! Grazie al monitoraggio giornaliero (1 messaggio al giorno per 30 giorni) sarò al tuo fianco passo dopo passo in ogni cambiamento.')" class="w-full text-left p-4 rounded-2xl bg-white hover:bg-brand-primary/10 border border-brand-primary/20 text-sm font-medium flex items-center justify-between">
+                    <span>3. Situazione delicata / inserimento: desidero supporto quotidiano</span>
+                    <i class="ph-bold ph-caret-right text-brand-primary"></i>
+                </button>
+                <button onclick="showQuizRecommendation('Percorso 2 Mesi (199€)', 'Include 90 minuti di videoconsulenza iniziale e 60 giorni di affiancamento: ideale per convivenze complesse tra più gatti o problematiche che durano da tempo.')" class="w-full text-left p-4 rounded-2xl bg-white hover:bg-brand-primary/10 border border-brand-primary/20 text-sm font-medium flex items-center justify-between">
+                    <span>4. Convivenza complessa tra più gatti o problema radicato nel tempo</span>
+                    <i class="ph-bold ph-caret-right text-brand-primary"></i>
+                </button>
+            `;
+        }
+
+        function showQuizRecommendation(pkgTitle, reason) {
+            document.getElementById('quiz-question-title').textContent = "Il percorso ideale per voi è:";
+            document.getElementById('quiz-options').innerHTML = `
+                <div class="p-5 rounded-2xl bg-white border-2 border-brand-primary space-y-2">
+                    <span class="text-xs font-bold uppercase tracking-wider text-brand-primary">Consiglio Personalizzato</span>
+                    <h4 class="font-editorial text-2xl font-bold text-brand-text">${pkgTitle}</h4>
+                    <p class="text-xs sm:text-sm text-brand-muted leading-relaxed">${reason}</p>
+                </div>
+                <div class="flex gap-3 pt-2">
+                    <button onclick="renderQuizStep1()" class="px-4 py-3 rounded-xl bg-brand-surface text-xs font-semibold">Indietro</button>
+                    <button onclick="closeQuizModal(); openBookingModal('${pkgTitle}')" class="flex-1 py-3 px-5 rounded-xl bg-brand-primary text-white text-xs sm:text-sm font-semibold">
+                        Seleziona questo percorso e scrivimi
+                    </button>
+                </div>
+            `;
+        }
+
+        // 10. Video Interview & Legal Modals
+        function openVideoModal() {
+            const body = document.getElementById('generic-modal-body');
+            body.innerHTML = `
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-primary">Conosciamoci Meglio</span>
+                <h3 class="font-editorial text-3xl font-bold text-brand-text mt-1 mb-4">Intervista a Daniela Tartarini – Feeling Felino</h3>
+                <div class="rounded-2xl overflow-hidden bg-brand-text text-white p-8 text-center space-y-4 border border-brand-primary/30">
+                    <div class="w-16 h-16 rounded-full bg-brand-primary/20 border border-brand-primary mx-auto flex items-center justify-center text-brand-accent">
+                        <i class="ph-duotone ph-video-camera text-3xl"></i>
+                    </div>
+                    <h4 class="font-editorial text-2xl italic">“Capire il gatto significa uscire dall'antropocentrismo ed entrare nel suo mondo sensoriale ed emotivo.”</h4>
+                    <p class="text-xs sm:text-sm text-white/80 max-w-lg mx-auto leading-relaxed">
+                        Nell'intervista racconto come nasce Feeling Felino, il valore del percorso SIUA e perché ogni consulenza parte dall'ascolto profondo della famiglia e dall'osservazione dei video nel contesto domestico.
+                    </p>
+                    <div class="pt-2">
+                        <a href="#contatti" onclick="closeGenericModal()" class="inline-flex items-center gap-2 bg-brand-primary hover:bg-brand-primaryDark text-white px-6 py-3 rounded-xl text-xs font-semibold">
+                            Prenota un colloquio conoscitivo <i class="ph-bold ph-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            `;
+            document.getElementById('generic-modal').classList.remove('hidden');
+        }
+
+        function openLegalModal() {
+            const body = document.getElementById('generic-modal-body');
+            body.innerHTML = `
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-primary">Informativa Ufficiale</span>
+                <h3 class="font-editorial text-3xl font-bold text-brand-text mt-1 mb-4">Termini e Condizioni & Privacy Policy</h3>
+                <div class="space-y-3 text-xs sm:text-sm text-brand-muted leading-relaxed">
+                    <p><strong>Titolare del Trattamento:</strong> Daniela Tartarini – Via Daniele Manin 16/5 – P.Iva: 04283621201 – Email: info@feelingfelino.it</p>
+                    <p><strong>Natura del Servizio:</strong> I percorsi offerti da Feeling Felino sono consulenze relazionali ed etologiche con approccio cognitivo-zooantropologico svolte da Consulente della Relazione Felina® diplomata SIUA. Le consulenze non sostituiscono in alcun modo la visita medica veterinaria o la diagnosi di patologie organiche.</p>
+                    <p><strong>Modalità di Erogazione e Pagamento:</strong> Le consulenze si svolgono online previo invio del questionario conoscitivo e del materiale foto/video concordato. I dati personali forniti tramite i moduli del sito sono trattati esclusivamente per rispondere alle richieste dell'utente nel pieno rispetto del GDPR (Regolamento UE 2016/679).</p>
+                </div>
+            `;
+            document.getElementById('generic-modal').classList.remove('hidden');
+        }
+
+        function closeGenericModal() {
+            document.getElementById('generic-modal').classList.add('hidden');
+        }
+
+        // 11. Forms Handling
+        function handlePdfGuideSubmit(e) {
+            e.preventDefault();
+            const fb = document.getElementById('pdf-feedback');
+            fb.textContent = "✨ Perfetto! Controlla la tua casella email per scaricare la guida PDF di Feeling Felino.";
+            fb.classList.remove('hidden');
+            e.target.reset();
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            document.getElementById('contact-success-box').classList.remove('hidden');
+            e.target.reset();
+        }
+
+        // 12. Theme / Palette Switcher
+        function togglePalettePanel() {
+            document.getElementById('palette-panel').classList.toggle('hidden');
+        }
+
+        function applyTheme(preset) {
+            const root = document.documentElement;
+            if (preset === 'default') {
+                root.style.setProperty('--color-primary', '#C87D65');
+                root.style.setProperty('--color-primary-dark', '#B0644C');
+                root.style.setProperty('--color-secondary', '#7A9A8B');
+                root.style.setProperty('--color-bg', '#FAF6F0');
+                root.style.setProperty('--color-surface', '#F2EAE0');
+                root.style.setProperty('--color-accent', '#D9A05B');
+            } else if (preset === 'rose') {
+                root.style.setProperty('--color-primary', '#B5727A');
+                root.style.setProperty('--color-primary-dark', '#9B5B63');
+                root.style.setProperty('--color-secondary', '#8B9D83');
+                root.style.setProperty('--color-bg', '#FDF9F8');
+                root.style.setProperty('--color-surface', '#F5ECEA');
+                root.style.setProperty('--color-accent', '#D49B7E');
+            } else if (preset === 'sage') {
+                root.style.setProperty('--color-primary', '#5F8575');
+                root.style.setProperty('--color-primary-dark', '#4B6E5F');
+                root.style.setProperty('--color-secondary', '#C87D65');
+                root.style.setProperty('--color-bg', '#F7F6F2');
+                root.style.setProperty('--color-surface', '#EAE8E0');
+                root.style.setProperty('--color-accent', '#C89D54');
+            }
+            document.getElementById('palette-panel').classList.add('hidden');
+        }
+
+        // 13. Mobile Menu, Scroll Progress, Cursor & IntersectionObserver Initialization
+        window.addEventListener('DOMContentLoaded', () => {
+            renderCertificates();
+            updateResourceCalculator();
+
+            // Mobile menu toggle
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+            });
+
+            // Scroll reveal observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+            // Scroll progress bar
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById('scroll-progress').style.width = scrolled + '%';
+            });
+
+            // Custom Cursor Ring
+            const cursor = document.getElementById('cursor-ring');
+            window.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+        });
+    </script>
+</body>
+</html>
